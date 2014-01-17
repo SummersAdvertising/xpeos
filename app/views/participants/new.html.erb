@@ -1,0 +1,142 @@
+<%= form_for(@participant) do |f| %>
+<h2><img src="/images/f-03.png"/></h2>
+<div id="content-1"> <span id="note-1">請確實填寫正確資料，以便中奬通知 <b>以下紅線範圍為必填資料</b></span> <span id="note-2"><b>*中獎者須配合主辦單位要求，提供產品序號、發票等相關購買證明</b></span>
+  <div id="table-1">
+    <div class="table-box">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th width="17%" align="right"><%= f.label :name, '真實姓名' %></th>
+          <td width="83%"><%= f.text_field :name, :class => "text" %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="table-box">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th width="17%" align="right"><%= f.label :phone, '聯絡電話' %></th>
+          <td width="83%"><%= f.text_field :phone, :class => "text" %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="table-box">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th width="17%" align="right"><%= f.label :email, '電子信箱' %></th>
+          <td width="83%"><%= f.text_field :email, :class => "text" %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="table-box">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th width="17%" align="right"><%= f.label :address, '收件地址' %></th>
+          <td width="83%"><%= f.text_field :address, :class => "text" %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="table-box">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th width="17%" align="right"><%= f.label :key, '產品識別碼' %></th>
+          <td width="83%"><%= f.text_field :key, :class => "text" %></td>
+        </tr>
+      </table>
+    </div>
+    <span>Windows 8 產品識別碼 (PID) 20 位英文加數字混和碼，填寫格式為 00000-00000-00000-00000 <a href="#">識別碼教學</a></span> </div>
+  <div id="table-2">
+    <h3>Windows 8 購買版本</h3>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><input name="participant[product]" type="checkbox" value="Windows 8" class="checkbox"/>
+          Windows 8</td>
+        <td><input name="participant[product]" type="checkbox" value="Windows 8 專業版" class="checkbox"/>
+          Windows 8 專業版</td>
+        <td><input name="participant[product]" type="checkbox" value="Windows 8 隨機版" class="checkbox"/>
+          Windows 8 隨機版</td>
+        <td><input name="participant[product]" type="checkbox" value="Windows 8 網路升級版" class="checkbox"/>
+          Windows 8 網路升級版</td>
+      </tr>
+      <tr>
+        <td><input name="participant[product]" type="checkbox" value="Windows 8.1" class="checkbox"/>
+          Windows 8.1</td>
+        <td><input name="participant[product]" type="checkbox" value="Windows 8.1 專業版" class="checkbox"/>
+          Windows 8.1 專業版</td>
+        <td><input name="participant[product]" type="checkbox" value="Windows 8.1 隨機版" class="checkbox"/>
+          Windows 8.1 隨機版</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2"><input name="participant[product]" type="checkbox" value="Windows 8.1 網路購買盒裝版序號" class="checkbox"/>
+          Windows 8.1 網路購買盒裝版序號</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </div>
+  <div id="table-3">
+    <h3>參加雙A大廠「享好禮．加碼抽」請勾選購買廠牌及型號：</h3>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="13%"><input name="participant[extra]" type="checkbox" value="Acer" class="checkbox"/>
+          Acer</td>
+        <td width="14%"><input name="participant[extra]" type="checkbox" value="ASUS" class="checkbox"/>
+          ASUS</td>
+        <td width="8%"><input id="extra-else" name="participant[extra]" type="checkbox" value="其他" class="checkbox"/>
+          其他</td>
+        <td width="27%"><input id="extra-else-bland" disabled="disabled" name="participant[extra]" type="text" class="text"/></td>
+        <td width="11%">購買型號：</td>
+        <td width="27%"><input name="participant[extra_product]" type="text" class="text"/></td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div id="content-2">
+  <h3>演唱會貴賓早鳥優惠   資料登錄</h3>
+  <div class="left"> 購買 Intel 指定處理器，參加 Intel X 蔡依林菜市場名<br>
+    同樂會演唱會入場劵</div>
+  <div class="right">
+  <div class="table-box">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th width="40%">購買處理器</th>
+        <td width="60%"><select name="participant[cpu]">
+            <option value="">- 請選擇處理器 -</option>
+            <option>Intel® Core™</option>
+            <option>Intel® Pentium®</option>
+            <option>Intel® Celeron®</option>
+            <option>Intel® Atom™</option>
+            <option>其他</option>
+          </select></td>
+      </tr>
+    </table>
+    </div>
+  </div>
+</div>
+<div id="content-3">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="4%" valign="top"><input name="" type="checkbox" value="[我同意隱私權聲明]" class="checkbox"/></td>
+      <td width="96%">我同意<br>
+        若您同意本公司依下述聲明使用您的個人資料，請勾選左側方格隱私權聲明：參加者同意所提供的姓名、電子郵件地址、一般郵寄地址或聯絡電話，得由主辦單位及其指定之執行單位或承攬第三人，基於辦理本活動之目的予以蒐集、處理及利用。利用期間為本活動期間及本活動辦理完畢為止，利用地區為台灣。您得自由選擇是否提供個人資料時，但若不提供，則主辦單位無法給予有效參加資格，亦無法履行提供獎項的義務。您就所提供的個人資料得要求查詢、閱覽、製給複製本、補充、更正、刪除、或停止蒐集、處理或利用。</td>
+    </tr>
+    <tr>
+      <td colspan="2" align="right"><input name="" type="reset" data-confirm="確定清空您已經填寫的資料？" class="button" id="button-1" value="" />
+      <%= f.submit '', :class=> 'button', :id => 'button-2' %>
+    </tr>
+  </table>
+</div>
+<% end %>
+
+
+<script>
+	$(':checkbox').click(function(){ 
+		$(':checkbox[name="' + $(this).attr('name') + '"]').not($(this)).attr('checked', false); 		
+		
+		if ( $('#extra-else').prop('checked') ) {
+			$('#extra-else-bland').attr('disabled', false);
+		} else {
+			$('#extra-else-bland').attr('disabled', true);			
+		}
+	})
+	
+</script>

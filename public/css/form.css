@@ -1,0 +1,41 @@
+body{background:url(../images/f-01.png) center 0 no-repeat #A00406}
+#wrapper{font:300 14px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;width:960px;
+margin:0 auto}
+a{font:300 14px 微軟正黑體,Microsoft JhengHei;text-decoration:none;
+-webkit-transition:all ease .3s;-moz-transition:all ease .3s}
+
+#article{background:#fff;margin:135px 0 0 0;position:relative;padding:75px;box-shadow:0 0 5px #fff}
+#article h2{position:absolute;top:-100px;left:80px}
+#article a{color:#0068b7;text-decoration:underline}
+#article a:hover{color:#338FD5}
+#article .text{border:none;width:100%;padding:5px 10px;font:300 14px 微軟正黑體,Microsoft JhengHei}
+#article h3{color:#2225a5;font:300 22px 微軟正黑體,Microsoft JhengHei;height:40px}
+#article b{color:#FF345A}
+
+#content-1{border:3px solid #FF345A;padding:20px 55px 40px 55px;position:relative}
+#table-1 .table-box{border-radius:10px;border:1px solid #1FA6E5;margin:10px 0;overflow:hidden}
+#table-1 th{background:#1FA6E5;color:#fff;font:300 18px 微軟正黑體,Microsoft JhengHei;padding:0 12px 0 0}
+#table-1 span{color:#666666;font-size:12px;text-align:center;display:inline-block;width:100%}
+#table-2{margin:20px 0}
+#table-2 td{padding:10px 0}
+#table-3 .text{border-bottom:1px solid #555}
+#content-1 > span{background:#fff;position:absolute;padding:0 15px;right:40px}
+#note-1{top:-13px}
+#note-2{bottom:-13px}
+
+#content-2{overflow:hidden;padding:40px 55px;border-bottom:1px solid #B2B2B2}
+#content-2 .table-box{border-radius:10px;border:1px solid #1FA6E5;margin:10px 0;overflow:hidden}
+#content-2 th{background:#1FA6E5;color:#fff;font:300 18px 微軟正黑體,Microsoft JhengHei;padding:0 12px 0 0}
+#content-2 h3{clear:both}
+#content-2 .left{float:left;width:50%}
+#content-2 .right{float:right;width:50%}
+#content-2 select{width:100%;border:none;padding:10px 10px;font:300 14px 微軟正黑體,Microsoft JhengHei}
+
+#content-3{padding:40px 55px}
+#content-3 .button{width:141px;height:61px;border:none;margin:30px 0 0 10px}
+#content-3 .button:hover{position:relative;top:2px;cursor:pointer}
+#button-1{background:url(../images/f-05.gif) 0 0 no-repeat}
+#button-2{background:url(../images/f-04.gif) 0 0 no-repeat}
+
+#footer{height:135px;padding:30px 0 0 255px;background:url(../images/f-02.jpg) 14% 28px no-repeat;color:#fff}
+#footer a{color:#fff}

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Robots" content="index,follow"/>
+<title></title>
+<meta property="og:image" content="http://www.microsoft.com/taiwan/promo/xpeos/images/thumb.jpg">
+
+
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+<link rel="image_src" href="http://www.microsoft.com/taiwan/promo/xpeos/images/thumb.jpg">
+<link rel="stylesheet" href="/css/reset.css">
+<link rel="stylesheet" href="/css/form.css">
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/auto-full-height.min.js"></script>
+</head>
+
+<body>
+<div id="wrapper">
+  <div id="article">
+  	<%= yield %>
+    
+  </div>
+  <div id="footer"> ©  2013 Microsoft Corporation. 著作權所有，並保留一切權利。<a href="http://www.microsoft.com/taiwan/misc/cpyright.htm" target="_blank">使用規定</a>｜<a href="http://www.microsoft.com/library/toolbar/3.0/trademarks/zh-tw.mspx" target="_blank">商標</a>｜<a href="http://www.microsoft.com/privacystatement/zh-tw/core/default.aspx" target="_blank">隱私權聲明</a> </div>
+</div>
+</body>
+</html>

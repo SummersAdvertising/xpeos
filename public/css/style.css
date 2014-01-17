@@ -1,0 +1,23 @@
+body{background:url(../images/bg1.gif)}
+#wrapper{font:300 14px 微軟正黑體,Microsoft JhengHei;line-height:1.7em}
+a{font:300 14px 微軟正黑體,Microsoft JhengHei;text-decoration:none;
+-webkit-transition:all ease .3s;-moz-transition:all ease .3s;color:#222}
+.main{margin:0 auto;color:#222}
+
+#header{height:76px;background:url(../images/top-bg.jpg) 0 0 repeat-x}
+#header .main{width:1200px;background:url(../images/top-2.png) right center no-repeat}
+#header ul{overflow:hidden}
+#header li{float:left;border-left:1px solid #A7811B;background:url(../images/top-bg.jpg) 0 0 repeat-x;-webkit-transition:all ease .3s;-moz-transition:all ease .3s}
+#header a{display:inline-block;height:76px;padding:30px 10px 0 45px;background:url(../images/top-1.png) 10px center no-repeat;color:#fff;font-weight:900}
+#header li:hover,
+#header .active{background:url(../images/top-bgh.jpg) 0 0 repeat-x;opacity:.8;filter:alpha(opacity=80)}
+
+#article .main{width:940px}
+
+#footer{background:#fff;height:70px;padding:25px 0 0 0;color:#464545;text-align:center;margin:30px 0 0 0}
+#footer .main{width:940px;background:url(../images/footer.jpg) 12% center no-repeat;padding:0 0 0 100px;position:relative}
+#footer a{color:#464545}
+#footer a:hover{text-decoration:underline}
+
+#back-to-top{position:absolute;right:0px;top:-75px;}
+#back-to-top:hover{top:-80px;}

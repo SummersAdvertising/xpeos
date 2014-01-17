@@ -1,0 +1,23 @@
+
+#title{height:110px;position:relative}
+#title a,#title h2{position:absolute}
+#title h2{left:0px;top:40px}
+#link-1{right:0px;top:20px}
+#link-1:hover{top:15px}
+#link-2{left:20px;top:90px}
+#link-2:hover{left:25px}
+
+#container{background:#fff;padding:70px 0 0 0;box-shadow:0 0 5px #fff}
+#container > div{padding:30px 70px}
+#container h4{color:#ca0007;height:35px;font:900 16px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;
+position:relative;left:-15px}
+#container h5{text-decoration:underline;font-weight:300}
+#container a{color:#0068b7;text-decoration:underline}
+#container a:hover{color:#338FD5}
+#container b{font-weight:900}
+#container span{color:#959595;font-weight:900}
+#container .sr{font-size:11px;position:relative;top:-4px;color:#222;font-weight:300}
+
+#content-2{background:url(../images/t-05.jpg) 560px 410px no-repeat #FFF9DB}
+#content-4{background:#FFF9DB}
+
