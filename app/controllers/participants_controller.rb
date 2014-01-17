@@ -4,12 +4,6 @@ class ParticipantsController < ApplicationController
   # GET /participants
   # GET /participants.json
   def index
-    @participants = Participant.all
-  end
-
-  # GET /participants/1
-  # GET /participants/1.json
-  def show
   end
 
   # GET /participants/new
@@ -30,36 +24,12 @@ class ParticipantsController < ApplicationController
     
     respond_to do |format|
       if @participant.save
-        format.html { redirect_to @participant, notice: 'Participant was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @participant }
+        format.html { redirect_to new_participant_path, notice: 'Participant was successfully created.' }
+
       else
         format.html { render action: 'new' }
         format.json { render json: @participant.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # PATCH/PUT /participants/1
-  # PATCH/PUT /participants/1.json
-  def update
-    respond_to do |format|
-      if @participant.update(participant_params)
-        format.html { redirect_to @participant, notice: 'Participant was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @participant.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /participants/1
-  # DELETE /participants/1.json
-  def destroy
-    @participant.destroy
-    respond_to do |format|
-      format.html { redirect_to participants_url }
-      format.json { head :no_content }
     end
   end
 
