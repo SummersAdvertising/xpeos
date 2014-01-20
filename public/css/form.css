@@ -47,7 +47,12 @@ a{font:300 14px 微軟正黑體,Microsoft JhengHei;text-decoration:none;
 }
 
 .field_with_errors {
+	width: 100%;
 	font-weight: 600;
 	padding: 0;
 	background: inherit;
+}
+
+#extra-else-bland {
+	background: #fff!important;
 }
