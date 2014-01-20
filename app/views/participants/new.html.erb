@@ -94,7 +94,7 @@
           ASUS</td>
         <td width="8%"><input id="extra-else" name="participant[extra]" type="checkbox" value="其他" class="checkbox"/>
           其他</td>
-        <td width="27%"><input id="extra-else-bland" disabled="disabled" name="participant[extra]" type="text" class="text"/></td>
+        <td width="27%"><%= f.text_field :extra_brand, :disabled => 'disabled', :id => 'extra-else-bland', :class => "text" %></td>
         <td width="11%">購買型號：</td>
         <td width="27%"><%= f.text_field :extra_product, :class => "text", :class => 'text' %></td>
       </tr>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140117061922) do
+ActiveRecord::Schema.define(version: 20140120091155) do
 
   create_table "participants", force: true do |t|
     t.string   "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20140117061922) do
     t.string   "ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "extra_brand"
   end
 
 end
