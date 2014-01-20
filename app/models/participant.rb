@@ -12,7 +12,7 @@ class Participant < ActiveRecord::Base
 	validates_format_of :key, :with => /\A\w{5}\-\w{5}\-\w{5}\-\w{5}\z/i, :message => '產品識別碼格式有誤，請重新檢查'
 	
 	validates_presence_of :product, :message => '請勾選您購買的產品類別'
-	validates_presence_of :extra, :message => '請勾選或輸入購買廠牌'
+	validates_presence_of :extra, :message => '請勾選並輸入購買廠牌'
 	validates_presence_of :extra_product, :message => '請輸入購買的產品型號'
 
 	
