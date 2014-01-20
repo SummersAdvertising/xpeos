@@ -56,3 +56,7 @@ a{font:300 14px 微軟正黑體,Microsoft JhengHei;text-decoration:none;
 #extra-else-bland {
 	background: #fff!important;
 }
+
+#alertify{font:300 14px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;}
+#alertify-cover{background:#000;opacity:.5;filter:alpha(opacity=50)}
+.alertify-buttons{background:none;border:none}
