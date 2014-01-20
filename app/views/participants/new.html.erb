@@ -1,6 +1,6 @@
 <script>
 <% if flash[ :notice ] %>
-	alertify.log('<%= flash[ :notice ].html_safe %>')
+	alertify.alert('<%= flash[ :notice ].html_safe %>')
 <% end %>
 <% if flash[ :warning ] %>
 	alertify.log('<%= flash[ :warning ].html_safe %>', 'error')
@@ -51,7 +51,7 @@
         </tr>
       </table>
     </div>
-    <span>Windows 8 產品識別碼 (PID) 20 位英文加數字混和碼，填寫格式為 00000-00000-00000-00000 <a href="#">識別碼教學</a></span> </div>
+    <span>Windows 8 產品識別碼 (PID) 20 位英文加數字混和碼，填寫格式為 00000-00000-00000-00000 <a href="http://www.microsoft.com/taiwan/promo/windows-8-offer/find_pid.htm">識別碼教學</a></span> </div>
   <div id="table-2">
     <h3>Windows 8 購買版本</h3>
     <table width="100%" border="0" cellspacing="0" cellpadding="0">

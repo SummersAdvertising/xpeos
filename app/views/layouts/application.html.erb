@@ -29,11 +29,16 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 
-<link rel="image_src" href="http://www.microsoft.com/taiwan/promo/xpeos/images/thumb.jpg">
 <link rel="stylesheet" href="<%= root_url %>/css/reset.css">
 <link rel="stylesheet" href="<%= root_url %>/css/form.css">
 <script src="<%= root_url %>/js/jquery-1.10.2.min.js"></script>
 <script src="<%= root_url %>/js/auto-full-height.min.js"></script>
+
+
+</head>
+
+<body>
+
 
 <script type="text/JavaScript">
 var varSegmentation=0;
@@ -46,9 +51,6 @@ document.write("<script type='text/javascript' src='" +
 </script>
 <noscript><img alt="" width="1" height="1" src="http://c.microsoft.com/trans_pixel.aspx" /></noscript>
 
-</head>
-
-<body>
 <div id="wrapper">
   <div id="article">
   	<%= yield %>
