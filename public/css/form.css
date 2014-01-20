@@ -39,3 +39,15 @@ a{font:300 14px 微軟正黑體,Microsoft JhengHei;text-decoration:none;
 
 #footer{height:135px;padding:30px 0 0 255px;background:url(../images/f-02.jpg) 14% 28px no-repeat;color:#fff}
 #footer a{color:#fff}
+
+/* errors */
+
+.column_with_errors {
+	background: orange!important;
+}
+
+.field_with_errors {
+	font-weight: 600;
+	padding: 0;
+	background: inherit;
+}

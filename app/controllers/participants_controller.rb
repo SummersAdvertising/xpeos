@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ParticipantsController < ApplicationController
   before_action :set_participant, only: [:show, :edit, :update, :destroy]
 
@@ -24,9 +25,12 @@ class ParticipantsController < ApplicationController
     
     respond_to do |format|
       if @participant.save
-        format.html { redirect_to new_participant_path, notice: 'Participant was successfully created.' }
+        format.html { redirect_to new_participant_path, notice: '我們收到您的資料囉，感謝您的參與，也祝您中獎！' }
 
       else
+
+      	flash[ :warning ] = @participant.errors.values.flatten.join('<br />')
+      
         format.html { render action: 'new' }
         format.json { render json: @participant.errors, status: :unprocessable_entity }
       end
