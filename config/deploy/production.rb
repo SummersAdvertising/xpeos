@@ -49,7 +49,7 @@ before "deploy:finishing", :set_database do
 		#db_config = "#{db_config} #{release_path}/config/database.yml.production"
 		execute :cp, "#{shared_path}/config/database.yml.production #{release_path}/config/database.yml"
 		within current_path do
-			execute :bundle, "install --deployment"
+			execute :bundle, "install"
 			execute :rake, "assets:precompile RAILS_ENV=production"
 		end
 	end

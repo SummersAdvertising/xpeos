@@ -3,7 +3,7 @@
 	alertify.alert('<%= flash[ :notice ].html_safe %>')
 <% end %>
 <% if flash[ :warning ] %>
-	alertify.log('<%= flash[ :warning ].html_safe %>', 'error')
+	alertify.alert('<%= flash[ :warning ].html_safe %>')
 <% end %>
 </script>
 
@@ -94,7 +94,7 @@
           其他</td>
         <td width="27%"><input id="extra-else-bland" disabled="disabled" name="participant[extra]" type="text" class="text"/></td>
         <td width="11%">購買型號：</td>
-        <td width="27%"><input name="participant[extra_product]" type="text" class="text"/></td>
+        <td width="27%"><%= f.text_field :extra_product, :class => "text", :class => 'text' %></td>
       </tr>
     </table>
   </div>
@@ -108,14 +108,9 @@
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <th width="40%">購買處理器</th>
-        <td width="60%"><select name="participant[cpu]">
-            <option value="">- 請選擇處理器 -</option>
-            <option>Intel® Core™</option>
-            <option>Intel® Pentium®</option>
-            <option>Intel® Celeron®</option>
-            <option>Intel® Atom™</option>
-            <option>其他</option>
-          </select></td>
+        <td width="60%">
+        	<%= f.select :cpu, [['- 請選擇處理器 -', ''], 'Intel® Core™', 'Intel® Pentium®', 'Intel® Celeron®', 'Intel® Atom™', '其他' ] %>
+        </td>
       </tr>
     </table>
     </div>
