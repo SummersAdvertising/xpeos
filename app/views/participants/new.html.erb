@@ -47,11 +47,11 @@
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <th width="17%" align="right"><%= f.label :key, '產品識別碼' %></th>
-          <td width="83%"><%= f.text_field :key, :class => "text" %></td>
+          <td width="83%"><%= f.text_field :key, :class => "text", :maxlength => 23 %></td>
         </tr>
       </table>
     </div>
-    <span>Windows 8 產品識別碼 (PID) 20 位英文加數字混和碼，填寫格式為 00000-00000-00000-00000 <a href="http://www.microsoft.com/taiwan/promo/windows-8-offer/find_pid.htm">識別碼教學</a></span> </div>
+    <span>Windows 8 產品識別碼 (PID) 20 位英文加數字混和碼，填寫格式為 00000-00000-00000-00000 <a target="_blank" href="http://www.microsoft.com/taiwan/promo/windows-8-offer/find_pid.htm">識別碼教學</a></span> </div>
   <div id="table-2">
     <h3>Windows 8 購買版本</h3>
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -165,6 +165,24 @@
 			return false;
 		}
 		
+		
+	});
+	
+	
+	$('#participant_key').keyup(function() {
+		var value = $(this).val();
+		var sets = value.split('-');
+		
+		var last = sets.pop();
+		
+		if ( last.length > 5 ) {
+			sets.push( last.substr(0, 5) );
+			sets.push( last.substr(5, last.length) )
+		} else {
+			sets.push(last);
+		}
+		
+		$(this).val( sets.join('-') );
 		
 	});
 	
