@@ -6,8 +6,6 @@ class ParticipantsController < ApplicationController
 
 
   def export
-  	#fae787a2334dd261e3344e7ff59d0230f0259ef6
-  
   	@participants = Participant.order( :created_at => :desc )
   end
 
@@ -53,6 +51,12 @@ class ParticipantsController < ApplicationController
     end
     
     def authenticate_download
+    
+    	if request.remote_ip != '127.0.0.1' || request.remote_ip != '220.133.14.87'
+    		puts 'ip 不允許，跳離。'
+    		redirect_to root_url
+    	end
+    
     	authenticate_or_request_with_http_basic do |username, password|
     	  if Digest::SHA1.hexdigest( username ) == 'c34ff016869b9f77e92064651c867f1eee8cb506' && Digest::SHA1.hexdigest( password ) == 'fae787a2334dd261e3344e7ff59d0230f0259ef6'    	  
     	  	true
