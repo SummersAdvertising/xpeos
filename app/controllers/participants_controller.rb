@@ -52,7 +52,7 @@ class ParticipantsController < ApplicationController
     
     def authenticate_download
     
-    	if request.remote_ip != '127.0.0.1' || request.remote_ip != '220.133.14.87'
+    	if request.remote_ip != '127.0.0.1' && request.remote_ip != '220.133.14.87'
     		puts 'ip 不允許，跳離。'
     		redirect_to root_url
     	end
