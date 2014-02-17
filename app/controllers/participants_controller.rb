@@ -2,9 +2,13 @@
 class ParticipantsController < ApplicationController
   before_action :set_participant, only: [:show, :edit, :update, :destroy]
 
-  # GET /participants
-  # GET /participants.json
-  def index
+  before_filter :authenticate_download, only: [:export]
+
+
+  def export
+  	#fae787a2334dd261e3344e7ff59d0230f0259ef6
+  
+  	@participants = Participant.order( :created_at => :desc )
   end
 
   # GET /participants/new
@@ -47,4 +51,19 @@ class ParticipantsController < ApplicationController
     def participant_params
       params.require(:participant).permit(:name, :phone, :email, :address, :key, :product, :extra, :extra_brand, :extra_product, :cpu)
     end
+    
+    def authenticate_download
+    	authenticate_or_request_with_http_basic do |username, password|
+    	  if Digest::SHA1.hexdigest( username ) == 'c34ff016869b9f77e92064651c867f1eee8cb506' && Digest::SHA1.hexdigest( password ) == 'fae787a2334dd261e3344e7ff59d0230f0259ef6'    	  
+    	  	true
+    	  else
+    	  	session[ :try_download ] = session[ :try_download ].nil? ? 0 : session[ :try_download ]+1
+    	  	
+    	  	if session[ :try_download ] > 5
+    	  		redirect_to root_url
+    	  	end    	  	
+    	  end
+	    end
+    end
+    
 end

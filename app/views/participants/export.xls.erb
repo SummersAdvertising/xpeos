@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">姓名</Data></Cell>
+        <Cell><Data ss:Type="String">電話</Data></Cell>
+        <Cell><Data ss:Type="String">電子信箱</Data></Cell>
+        <Cell><Data ss:Type="String">地址</Data></Cell>
+        <Cell><Data ss:Type="String">序號</Data></Cell>
+        <Cell><Data ss:Type="String">作業系統版本</Data></Cell>
+        <Cell><Data ss:Type="String">購買品牌</Data></Cell>
+        <Cell><Data ss:Type="String">購買產品</Data></Cell>
+        <Cell><Data ss:Type="String">選購CPU</Data></Cell>
+        <Cell><Data ss:Type="String">時間</Data></Cell>
+      </Row>
+    <% @participants.each do |participants| %>
+      <Row>
+        <Cell><Data ss:Type="String"><%= participants.name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= participants.phone %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= participants.address %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= participants.email %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= participants.key %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= participants.product %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= participants.extra %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= participants.extra_product.nil? ? participants.extra_brand : participants.extra_product %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= participants.cpu %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= participants.created_at %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

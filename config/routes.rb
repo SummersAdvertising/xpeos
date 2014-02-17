@@ -1,11 +1,20 @@
 Xpeos::Application.routes.draw do
-  resources :participants
+  resources :participants do
+  	collection do
+  		get :export
+  	end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  
+
+
   # You can have the root of your site routed with "root"
   root 'participants#new'
+  
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
