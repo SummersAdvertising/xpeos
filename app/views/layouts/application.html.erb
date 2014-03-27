@@ -29,6 +29,12 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 
+<script>
+	if ( window.location.href.match(/xpeos.midsummer.me/)) {
+		
+	}
+</script>
+
 <link rel="stylesheet" href="<%= root_url %>/css/reset.css">
 <link rel="stylesheet" href="<%= root_url %>/css/form.css">
 <script src="<%= root_url %>/js/jquery-1.10.2.min.js"></script>

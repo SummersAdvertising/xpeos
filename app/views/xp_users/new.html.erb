@@ -134,9 +134,11 @@ $(function(){
   
   
 
-	<div style="display: none;">
+	<div style="display: none;">	
 		<div id="form">
 		  <%= form_for(@xp_user) do |f| %>
+		<p>您的貼圖分享已經完成囉，<a id="fb-photo-link" href="#" target="_blank">馬上到塗鴉牆看看</a><br />
+請填寫完整之正確資料，以免錯失中獎機會</p>
 	      <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	        <tr>
 	          <td colspan="2"><div> <%= f.label :name, '真實姓名' %>
@@ -253,6 +255,8 @@ $(function(){
 				      
 					      is_get_post = true;
 					      $('#xp_user_fb_share_id').val( response.id );
+					      $('#fb-photo-link').val( 'https://www.facebook.com/photo.php?fbid=' + response.id );
+					      
 					      
 				      	
 				      } else {
