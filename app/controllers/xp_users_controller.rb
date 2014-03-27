@@ -16,7 +16,7 @@ class XpUsersController < ApplicationController
 
     respond_to do |format|
       if @xp_user.save
-        format.html { redirect_to @xp_user, notice: '恭喜您已經成功取得抽獎資格，請繼續注意本網站公告喔！' }
+        format.html { redirect_to new_xp_user_path, notice: '恭喜您已經成功取得抽獎資格，請繼續注意本網站公告喔！' }
         format.json { render action: 'show', status: :created, location: @xp_user }
       else
         format.html { render action: 'new' }

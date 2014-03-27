@@ -3,14 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>無標題文件</title>
-<link rel="stylesheet" href="/css/reset.css">
-<link rel="stylesheet" href="/css/colorbox.css">
-<link rel="stylesheet" href="/css/_lottery.css">
-<script src="/js/jquery-1.10.2.min.js"></script>
-<script src="/js/auto-full-height.min.js"></script>
-<script src="/js/jquery.colorbox-min.js"></script>
-
-
+<link rel="stylesheet" href="<%= root_url %>/css/reset.css">
+<link rel="stylesheet" href="<%= root_url %>/css/colorbox.css">
+<link rel="stylesheet" href="<%= root_url %>/css/_lottery.css">
+<script src ="<%= root_url %>/js/jquery-1.10.2.min.js"></script>
+<script src ="<%= root_url %>/js/auto-full-height.min.js"></script>
+<script src ="<%= root_url %>/js/jquery.colorbox-min.js"></script>
 
 <script>
 	window.fbAsyncInit = function() {
@@ -34,6 +32,12 @@
 </script>
 
 <script>
+
+<% if notice %>
+	alert('<%= notice %>');
+	<% flash.delete( :notice ) %>
+<% end %>
+
 $(function(){	
 	var _showTab = 0;
 	var $defaultLi = $('#tab li').eq(_showTab).addClass('active');	
@@ -48,11 +52,6 @@ $(function(){
 		this.blur();
 	});
 });
-</script>
-<script>
- $(document).ready(function(){
-	 $(".inline").colorbox({inline:true, width:"579"})
- });
 </script>
 </head>
 
@@ -70,60 +69,58 @@ $(function(){
 
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
-              <td width="62%" height="555"><img id="share-1-photo" src="/images/l-07.jpg"/></td>
-              <td width="38%" class="text"><img src="/images/l-12.jpg"/>
+              <td width="62%" height="555"><img id="share-1-photo" src ="/images/l-07.jpg"/></td>
+              <td width="38%" class="text"><img src ="<%= root_url %>/images/l-12.jpg"/>
                 <p> 沒有錯，繼續用 XP，等於跟最新應用絕緣，撐下去只能苦命孤軍奮戰。趕快投入 Windows 8.1 新陣營吧！馬上開心享受所有支援、各種觸控裝備。 </p>
                 <p id="share-1-message" style="display: none;">
                 	【Windows XP不夠安全，大NG】
 
-					和我一起揮揮手帕跟 XP 說掰掰
-					
-					升級甩掉入侵電腦討厭鬼，每一天都有好心情！
+					和我一起揮揮手帕跟 XP 說掰掰					
+					升級甩掉入侵電腦討厭鬼，
+					每一天都有好心情！
 					
 					現在到 http://byexp.tw 分享貼圖，你也可以抽大獎！
 				</p>
-                <a data-id="1" href="javascript: void(0);" class="inline api-share-link"><img src="/images/l-08.jpg"/></a></td>
+                <a data-id="1" href="javascript: void(0);" class="inline api-share-link"><img src ="<%= root_url %>/images/l-08.jpg"/></a></td>
             </tr>
           </table>
         </div>
         <div id="content-2" class="content">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
-              <td width="62%" height="555"><img id="share-2-photo" src="/images/l-06.jpg"/></td>
-              <td width="38%" class="text"><img src="/images/l-13.jpg"/>
+              <td width="62%" height="555"><img id="share-2-photo" src ="/images/l-06.jpg"/></td>
+              <td width="38%" class="text"><img src ="<%= root_url %>/images/l-13.jpg"/>
                 <p> 別讓 XP 終止支援後，病毒、駭客和惡意程式有機會整天纏著你！
                   Windows 8.1 內建防毒軟體，全面嚴密防護，開機上網不必緊張兮兮。 </p>
-                <p id="share-2-message" style="display: none;">【Windows XP不夠安全，大NG】
-
+                <p id="share-2-message" style="display: none;">
 					【Windows XP不支援軟硬體，大NG】
 
-					電腦裝備不夠力，絕對比豬頭隊友還要命！
-					
-					趕快投入全新Windows 8.1陣營，讓所有支援、觸控裝備都聽你的
+					電腦裝備不夠力，絕對比豬頭隊友還要命！										
+					趕快投入全新Windows 8.1陣營，
+					讓所有支援、觸控裝備都聽你的。
 					
 					現在到 http://byexp.tw 分享貼圖，你也可以抽大獎！
 				</p>
-                <a data-id="2" href="javascript: void(0);" class="inline api-share-link"><img src="/images/l-08.jpg"/></a></td>
+                <a data-id="2" href="javascript: void(0);" class="inline api-share-link"><img src ="<%= root_url %>/images/l-08.jpg"/></a></td>
             </tr>
           </table>
         </div>
         <div id="content-3" class="content">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
-              <td width="62%" height="555"><img id="share-3-photo" src="/images/l-05.jpg"/></td>
-              <td width="38%" class="text"><img src="/images/l-11.jpg"/>
+              <td width="62%" height="555"><img id="share-3-photo" src ="/images/l-05.jpg"/></td>
+              <td width="38%" class="text"><img src ="<%= root_url %>/images/l-11.jpg"/>
                 <p> 不會吧，當朋友都已經改用 Window 8.1 整合社群聊得超開心，只剩你還在痴痴等待沒人理？親愛的別再委屈了，趕快進化升級找回朋友和自信。 </p>
-                <p id="share-3-message" style="display: none;">【Windows XP不夠安全，大NG】
-
+                <p id="share-3-message" style="display: none;">
 					【Windows XP不夠進化，大NG】
 
-					噢～你朋友的朋友和朋友們，都用 Window 8.1 社群整合聊開了
-					
-					趕快進化升級，才不會一個人空虛寂寞覺得冷
+					噢～你朋友的朋友和朋友們，
+					都用 Window 8.1 社群整合聊開了，
+					趕快進化升級，才不會一個人空虛寂寞覺得冷。
 					
 					現在到 http://byexp.tw 分享貼圖，你也可以抽大獎！
 				</p>
-                <a data-id="3" href="javascript: void(0);" class="inline api-share-link"><img src="/images/l-08.jpg"/></a></td>
+                <a data-id="3" href="javascript: void(0);" class="inline api-share-link"><img src ="<%= root_url %>/images/l-08.jpg"/></a></td>
             </tr>
           </table>
         </div>
@@ -134,44 +131,79 @@ $(function(){
   <!--container-->
   
   
-<div id="xp-user-form" style="display: none" >
-	
-<%= form_for(@xp_user) do |f| %>
 
-	
-    <div id="form">
-      <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td colspan="2"><div> <%= f.label :name, '真實姓名' %>
-              <%= f.text_field :name %>
-            </div></td>
-        </tr>
-        <tr>
-          <td colspan="2"><div> <%= f.label :phone, '聯絡電話' %>
-              <%= f.text_field :phone %>
-            </div></td>
-        </tr>
-        <tr>
-          <td colspan="2"><div> <%= f.label :email, '電子信箱' %>
-              <%= f.text_field :email %>
-            </div></td>
-        </tr>
-        <tr>
-          <td width="50%" align="center"><input name="" type="reset" class="submit" id="clear"/></td>
-          <td width="50%" align="center"><%= f.submit '', :class => "submit", :id => "send" %></td>
-        </tr>
-      </table>
+	<div style="display: none;">
+		<div id="form">
+				<%= form_for(@xp_user) do |f| %>
+	      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	        <tr>
+	          <td colspan="2"><div> <%= f.label :name, '真實姓名' %>
+	              <%= f.text_field :name %>
+	            </div></td>
+	        </tr>
+	        <tr>
+	          <td colspan="2"><div> <%= f.label :phone, '聯絡電話' %>
+	              <%= f.text_field :phone %>
+	            </div></td>
+	        </tr>
+	        <tr>
+	          <td colspan="2"><div> <%= f.label :email, '電子信箱' %>
+	              <%= f.text_field :email %>
+	            </div></td>
+	        </tr>
+	        <tr>
+	          <td width="50%" align="center"><input name="" type="reset" class="submit" id="clear"/></td>
+	          <td width="50%" align="center"><%= f.submit '', :class => "submit", :id => "send" %></td>
+	        </tr>
+	      </table>
+	    <%= f.hidden_field :fb_user_id %>
+	    <%= f.hidden_field :fb_share_id %>
+	  <% end %>
     </div>
 
-    <%= f.hidden_field :fb_user_id %>
-    <%= f.hidden_field :fb_share_id %>
+	</div>
     
-  <% end %>
-</div>
-  
+    
 </div>
 
 <script>
+
+	var hold = false;
+
+	var originalClose = $.colorbox.close;
+	$.colorbox.close = function(){
+		if (hold) {			
+		  if ( confirm( '您的資料還沒寫完喔！您必須填寫完所有資料才能順利參加抽獎，您是否要放棄填寫資料呢？\n(若要繼續參加，請點選取消)' )) {
+		  	hold = false;
+		    originalClose();
+		  } 
+		} else {
+			originalClose();
+		}
+	 }
+					 
+	$('#new_xp_user').submit(function() {
+		
+		var errors = '';
+			var errors = '';
+				
+			if ( $('input[name="xp_user[name]"]').val().length <= 0 ) {
+				errors += "請寫上您的姓名 \n";
+			}			
+			if ( $('input[name="xp_user[phone]"]').val().length <= 0 ) {
+				errors += "請寫上您的電話 \n";
+			}
+			
+			if ( !$('input[name="xp_user[email]"]').val().match(/^[\w\.]+@[a-zA-Z0-9\-\_]+(\.[a-zA-Z]{2,3})+$/) ) {
+				errors += "您的信箱填寫有誤";
+			}
+		
+			if (errors) {
+				alert( errors );
+				return false;
+			}
+	});
+
 	$('.api-share-link').click(function() {
 		var id = $(this).data('id');
 		
@@ -182,7 +214,9 @@ $(function(){
 			
 			function check_open_form() {
 				if ( is_get_post && is_get_user ) {
-					$.colorbox({ href: "#form", inline: true, width: "579px" });
+					  
+					hold = true;
+					$.colorbox({ href: "#form", inline: true, width: "579px"});
 				}
 			}
 			
@@ -195,14 +229,17 @@ $(function(){
 				message: $('#share-' + id + '-message').html()
 				},
 			    function (response) {
-				      if (response && !response.error) {
-				      	
+				      if (response && !response.error && response.post_id) {
+				      	  console.log(response);
+				      	  	
 					      is_get_post = true;
-				      
-					      $('#xp_user_share_id').val( response.post_id );
+				      				      
+					      $('#xp_user_fb_share_id').val( response.post_id );
+					      
+					      check_open_form();
 				      	
 				      } else {
-				        alert('貼文授權失敗！錯誤碼：' + response.error);
+				        alert('貼文授權失敗！您必須成功貼文才能擁有抽獎資格喔！');				        
 				      }
 			    }
 			);
@@ -214,11 +251,13 @@ $(function(){
 				
 					$('#xp_user_name').val( response.name );
 					$('#xp_user_email').val( response.email );
-					$('#xp_fb_user_id').val( response.id );
-					$('#xp_user_name').val( response.name );										
+					$('#xp_user_fb_user_id').val( response.id );
+					$('#xp_user_name').val( response.name );			
+					
+					check_open_form();							
 				    
 				} else {
-					alert('取得資料錯誤！錯誤碼：' + response.error);
+					alert('取得資料錯誤！您必須授權提供基本資料才能擁有抽獎資格喔！');
 				}
 				
 			});
