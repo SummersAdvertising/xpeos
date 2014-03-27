@@ -73,11 +73,11 @@ $(function(){
               <td width="38%" class="text"><img src ="<%= root_url %>/images/l-12.jpg"/>
                 <p> 沒有錯，繼續用 XP，等於跟最新應用絕緣，撐下去只能苦命孤軍奮戰。趕快投入 Windows 8.1 新陣營吧！馬上開心享受所有支援、各種觸控裝備。 </p>
                 <p id="share-1-message" style="display: none;">
-                	【Windows XP不夠安全，大NG】
+					【Windows XP不支援軟硬體，大NG】
 
-					和我一起揮揮手帕跟 XP 說掰掰					
-					升級甩掉入侵電腦討厭鬼，
-					每一天都有好心情！
+					電腦裝備不夠力，絕對比豬頭隊友還要命！										
+					趕快投入全新Windows 8.1陣營，
+					讓所有支援、觸控裝備都聽你的。
 					
 					現在到 http://byexp.tw 分享貼圖，你也可以抽大獎！
 				</p>
@@ -93,11 +93,11 @@ $(function(){
                 <p> 別讓 XP 終止支援後，病毒、駭客和惡意程式有機會整天纏著你！
                   Windows 8.1 內建防毒軟體，全面嚴密防護，開機上網不必緊張兮兮。 </p>
                 <p id="share-2-message" style="display: none;">
-					【Windows XP不支援軟硬體，大NG】
+                	【Windows XP不夠安全，大NG】
 
-					電腦裝備不夠力，絕對比豬頭隊友還要命！										
-					趕快投入全新Windows 8.1陣營，
-					讓所有支援、觸控裝備都聽你的。
+					和我一起揮揮手帕跟 XP 說掰掰					
+					升級甩掉入侵電腦討厭鬼，
+					每一天都有好心情！
 					
 					現在到 http://byexp.tw 分享貼圖，你也可以抽大獎！
 				</p>
@@ -134,7 +134,7 @@ $(function(){
 
 	<div style="display: none;">
 		<div id="form">
-				<%= form_for(@xp_user) do |f| %>
+		  <%= form_for(@xp_user) do |f| %>
 	      <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	        <tr>
 	          <td colspan="2"><div> <%= f.label :name, '真實姓名' %>
@@ -158,9 +158,13 @@ $(function(){
 	      </table>
 	    <%= f.hidden_field :fb_user_id %>
 	    <%= f.hidden_field :fb_share_id %>
-	  <% end %>
-    </div>
-
+		  <% end %>
+	    </div>
+	    
+	    <div id="progress">
+		    <img src="/images/send.gif" />
+	    </div>
+	    
 	</div>
     
     
@@ -207,12 +211,24 @@ $(function(){
 	$('.api-share-link').click(function() {
 		var id = $(this).data('id');
 		
+		$.colorbox({ href: "#progress", inline: true, closeButton: false, overlayClose: false});
+		
 		FB.login(function() {
 			
 			var is_get_user = false;
 			var is_get_post = false;
 			
+			var is_get_user_finished = false;
+			var is_get_post_finished = false;
+			
 			function check_open_form() {
+				console.log('is_get_user_finished: ' + is_get_user_finished);
+				console.log('is_get_post_finished: ' + is_get_post_finished);
+			
+				if ( is_get_user_finished && is_get_post_finished ) {
+					$.colorbox.close();
+				}
+				
 				if ( is_get_post && is_get_user ) {
 					  
 					hold = true;
@@ -225,26 +241,29 @@ $(function(){
 				'me/photos',
 				"post",
 				{
-				url: '<%= root_url %>' + $('#share-' + id + '-photo').attr('src'), 
+				url: '<%= root_url %>/images/share-' + id + '.jpg',
 				message: $('#share-' + id + '-message').html()
 				},
 			    function (response) {
+				       is_get_post_finished = true;
+				    
 				      if (response && !response.error && response.post_id) {
-				      	  console.log(response);
-				      	  	
+				      
 					      is_get_post = true;
-				      				      
 					      $('#xp_user_fb_share_id').val( response.post_id );
 					      
-					      check_open_form();
 				      	
 				      } else {
 				        alert('貼文授權失敗！您必須成功貼文才能擁有抽獎資格喔！');				        
 				      }
+				      
+					  check_open_form();
 			    }
 			);
 			
 			FB.api('me', function( response ) {
+				is_get_user_finished = true;
+				
 				if ( response && !response.error ) {
 				
 					is_get_user = true;
@@ -253,13 +272,13 @@ $(function(){
 					$('#xp_user_email').val( response.email );
 					$('#xp_user_fb_user_id').val( response.id );
 					$('#xp_user_name').val( response.name );			
-					
-					check_open_form();							
+								
 				    
 				} else {
 					alert('取得資料錯誤！您必須授權提供基本資料才能擁有抽獎資格喔！');
 				}
 				
+				check_open_form();				
 			});
 			
 		}, { scope: "publish_actions, email" });
