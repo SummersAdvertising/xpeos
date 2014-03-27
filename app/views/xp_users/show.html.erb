@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @xp_user.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @xp_user.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @xp_user.email %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @xp_user.address %>
+</p>
+
+<p>
+  <strong>Fb user:</strong>
+  <%= @xp_user.fb_user_id %>
+</p>
+
+<p>
+  <strong>Fb share:</strong>
+  <%= @xp_user.fb_share_id %>
+</p>
+
+<p>
+  <strong>Access token:</strong>
+  <%= @xp_user.access_token %>
+</p>
+
+<%= link_to 'Edit', edit_xp_user_path(@xp_user) %> |
+<%= link_to 'Back', xp_users_path %>

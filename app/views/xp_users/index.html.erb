@@ -1,0 +1,43 @@
+
+
+
+<div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div>
+
+<h1>Listing xp_users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Fb user</th>
+      <th>Fb share</th>
+      <th>Access token</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @xp_users.each do |xp_user| %>
+      <tr>
+        <td><%= xp_user.name %></td>
+        <td><%= xp_user.phone %></td>
+        <td><%= xp_user.email %></td>
+        <td><%= xp_user.address %></td>
+        <td><%= xp_user.fb_user_id %></td>
+        <td><%= xp_user.fb_share_id %></td>
+        <td><%= xp_user.access_token %></td>
+        <td><%= link_to 'Show', xp_user %></td>
+        <td><%= link_to 'Edit', edit_xp_user_path(xp_user) %></td>
+        <td><%= link_to 'Destroy', xp_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Xp user', new_xp_user_path %>

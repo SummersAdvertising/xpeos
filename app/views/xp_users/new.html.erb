@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+<link rel="stylesheet" href="/css/reset.css">
+<link rel="stylesheet" href="/css/colorbox.css">
+<link rel="stylesheet" href="/css/_lottery.css">
+<script src="/js/jquery-1.10.2.min.js"></script>
+<script src="/js/auto-full-height.min.js"></script>
+<script src="/js/jquery.colorbox-min.js"></script>
+
+
+
+<script>
+	window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '678638088844362',
+          status     : true,
+          xfbml      : true
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/zh_TW/all.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+       
+       
+       
+</script>
+
+<script>
+$(function(){	
+	var _showTab = 0;
+	var $defaultLi = $('#tab li').eq(_showTab).addClass('active');	
+	$($defaultLi.find('a').attr('href')).siblings().hide();  
+	$('#tab li').click(function() {		
+		var $this = $(this),
+			_clickTab = $this.find('a').attr('href');		
+		$this.addClass('active').siblings('.active').removeClass('active');
+		$(_clickTab).stop(false, true).fadeIn(1000).siblings().hide(); 
+		return false;
+	}).find('a').focus(function(){
+		this.blur();
+	});
+});
+</script>
+<script>
+ $(document).ready(function(){
+	 $(".inline").colorbox({inline:true, width:"579"})
+ });
+</script>
+</head>
+
+<body>
+<div id="wrapper"> 
+<div id="container">
+    <div class="main">
+      <ul id="tab">
+        <li><a href="#content-1" id="tab-1">&nbsp;</a></li>
+        <li><a href="#content-2" id="tab-2">&nbsp;</a></li>
+        <li><a href="#content-3" id="tab-3">&nbsp;</a></li>
+      </ul>
+      <div id="content-box">
+        <div id="content-1" class="content">
+
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="62%" height="555"><img id="share-1-photo" src="/images/l-07.jpg"/></td>
+              <td width="38%" class="text"><img src="/images/l-12.jpg"/>
+                <p> 沒有錯，繼續用 XP，等於跟最新應用絕緣，撐下去只能苦命孤軍奮戰。趕快投入 Windows 8.1 新陣營吧！馬上開心享受所有支援、各種觸控裝備。 </p>
+                <p id="share-1-message" style="display: none;">
+                	【Windows XP不夠安全，大NG】
+
+					和我一起揮揮手帕跟 XP 說掰掰
+					
+					升級甩掉入侵電腦討厭鬼，每一天都有好心情！
+					
+					現在到 http://byexp.tw 分享貼圖，你也可以抽大獎！
+				</p>
+                <a data-id="1" href="javascript: void(0);" class="inline api-share-link"><img src="/images/l-08.jpg"/></a></td>
+            </tr>
+          </table>
+        </div>
+        <div id="content-2" class="content">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="62%" height="555"><img id="share-2-photo" src="/images/l-06.jpg"/></td>
+              <td width="38%" class="text"><img src="/images/l-13.jpg"/>
+                <p> 別讓 XP 終止支援後，病毒、駭客和惡意程式有機會整天纏著你！
+                  Windows 8.1 內建防毒軟體，全面嚴密防護，開機上網不必緊張兮兮。 </p>
+                <p id="share-2-message" style="display: none;">【Windows XP不夠安全，大NG】
+
+					【Windows XP不支援軟硬體，大NG】
+
+					電腦裝備不夠力，絕對比豬頭隊友還要命！
+					
+					趕快投入全新Windows 8.1陣營，讓所有支援、觸控裝備都聽你的
+					
+					現在到 http://byexp.tw 分享貼圖，你也可以抽大獎！
+				</p>
+                <a data-id="2" href="javascript: void(0);" class="inline api-share-link"><img src="/images/l-08.jpg"/></a></td>
+            </tr>
+          </table>
+        </div>
+        <div id="content-3" class="content">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="62%" height="555"><img id="share-3-photo" src="/images/l-05.jpg"/></td>
+              <td width="38%" class="text"><img src="/images/l-11.jpg"/>
+                <p> 不會吧，當朋友都已經改用 Window 8.1 整合社群聊得超開心，只剩你還在痴痴等待沒人理？親愛的別再委屈了，趕快進化升級找回朋友和自信。 </p>
+                <p id="share-3-message" style="display: none;">【Windows XP不夠安全，大NG】
+
+					【Windows XP不夠進化，大NG】
+
+					噢～你朋友的朋友和朋友們，都用 Window 8.1 社群整合聊開了
+					
+					趕快進化升級，才不會一個人空虛寂寞覺得冷
+					
+					現在到 http://byexp.tw 分享貼圖，你也可以抽大獎！
+				</p>
+                <a data-id="3" href="javascript: void(0);" class="inline api-share-link"><img src="/images/l-08.jpg"/></a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <!--content-box--> 
+    </div>
+  </div>
+  <!--container-->
+  
+  
+<div id="xp-user-form" style="display: none" >
+	
+<%= form_for(@xp_user) do |f| %>
+
+	
+    <div id="form">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td colspan="2"><div> <%= f.label :name, '真實姓名' %>
+              <%= f.text_field :name %>
+            </div></td>
+        </tr>
+        <tr>
+          <td colspan="2"><div> <%= f.label :phone, '聯絡電話' %>
+              <%= f.text_field :phone %>
+            </div></td>
+        </tr>
+        <tr>
+          <td colspan="2"><div> <%= f.label :email, '電子信箱' %>
+              <%= f.text_field :email %>
+            </div></td>
+        </tr>
+        <tr>
+          <td width="50%" align="center"><input name="" type="reset" class="submit" id="clear"/></td>
+          <td width="50%" align="center"><%= f.submit '', :class => "submit", :id => "send" %></td>
+        </tr>
+      </table>
+    </div>
+
+    <%= f.hidden_field :fb_user_id %>
+    <%= f.hidden_field :fb_share_id %>
+    
+  <% end %>
+</div>
+  
+</div>
+
+<script>
+	$('.api-share-link').click(function() {
+		var id = $(this).data('id');
+		
+		FB.login(function() {
+			
+			var is_get_user = false;
+			var is_get_post = false;
+			
+			function check_open_form() {
+				if ( is_get_post && is_get_user ) {
+					$.colorbox({ href: "#form", inline: true, width: "579px" });
+				}
+			}
+			
+			// upload photo into facebook			
+			FB.api(
+				'me/photos',
+				"post",
+				{
+				url: '<%= root_url %>' + $('#share-' + id + '-photo').attr('src'), 
+				message: $('#share-' + id + '-message').html()
+				},
+			    function (response) {
+				      if (response && !response.error) {
+				      	
+					      is_get_post = true;
+				      
+					      $('#xp_user_share_id').val( response.post_id );
+				      	
+				      } else {
+				        alert('貼文授權失敗！錯誤碼：' + response.error);
+				      }
+			    }
+			);
+			
+			FB.api('me', function( response ) {
+				if ( response && !response.error ) {
+				
+					is_get_user = true;
+				
+					$('#xp_user_name').val( response.name );
+					$('#xp_user_email').val( response.email );
+					$('#xp_fb_user_id').val( response.id );
+					$('#xp_user_name').val( response.name );										
+				    
+				} else {
+					alert('取得資料錯誤！錯誤碼：' + response.error);
+				}
+				
+			});
+			
+		}, { scope: "publish_actions, email" });
+		
+	});
+</script>
+
+
+</body>
+</html>
+
+
+
+

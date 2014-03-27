@@ -50,3 +50,5 @@ gem 'capistrano', group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'rails-alertify'
+
+gem 'fb_graph'

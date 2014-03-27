@@ -1,0 +1,36 @@
+html{background:#EEF3FA}
+#wrapper{width:1280px;margin:0 auto;font:300 14px 微軟正黑體,Microsoft JhengHei;line-height:1.7em}
+a{font:300 14px 微軟正黑體,Microsoft JhengHei;text-decoration:none;
+-webkit-transition:all ease .3s;-moz-transition:all ease .3s;color:#222}
+.main{width:1280px;margin:0 auto;position:relative}
+
+#tab{overflow:hidden;margin:0 0 0 145px;position:relative;top:1px}
+#tab li{float:left;margin:0 5px 0 0}
+#tab li a{display:block;width:181px;height:127px}
+#tab-1{background:url(../images/tab-1.png)}
+#tab-2{background:url(../images/tab-2.png)}
+#tab-3{background:url(../images/tab-3.png)}
+.active #tab-1{background:url(../images/tab-1h.png)}
+.active #tab-2{background:url(../images/tab-2h.png)}
+.active #tab-3{background:url(../images/tab-3h.png)}
+
+#container{background:url(../images/l-02.png);padding:20px 0 40px 0;font-size:1.2em;line-height:1.7em}
+#content-box{width:990px;margin:0 auto;background:#fff}
+.content{padding:30px 55px}
+.content .text{border-left:1px solid #A0A0A0;padding:0 0 0 55px}
+.content .text p{padding:30px 0}
+.content .text a:hover{filter:alpha(opacity=70);opacity:.7}
+
+#form{background:url(../images/l-09.png) 0 0 no-repeat;width:578px;height:371px;padding:100px 0 0 0;font:300 14px 微軟正黑體,Microsoft JhengHei}
+#form table{width:426px;margin:0 auto}
+#form div input{border:none;width:300px}
+#form div{background:#fff;border:1px solid #DCDCDC;border-radius:10px;padding:5px 10px;margin:10px 0}
+#form .submit{width:104px;height:34px;text-indent:-9999px;background:none;cursor:pointer;border:none;margin:30px 0 0 0}
+#form .submit:hover{filter:alpha(opacity=70);opacity:.7}
+#form #clear{background:url(../images/l-14.jpg)}
+#form #send{background:url(../images/l-15.jpg)}
+
+#cboxOverlay,
+#cboxLoadingGraphic,#cboxContent,#cboxLoadingOverlay,
+#cboxLoadedContent{background:none!important}
+#cboxClose,#cboxClose:hover{background:url(../images/l-10.png) 0 0 no-repeat;width:28px;height:29px;top:1px}

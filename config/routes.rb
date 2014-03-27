@@ -1,4 +1,6 @@
 Xpeos::Application.routes.draw do
+  resources :xp_users
+
   resources :participants do
   	collection do
   		get :export

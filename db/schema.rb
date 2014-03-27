@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140120091155) do
+ActiveRecord::Schema.define(version: 20140321065357) do
 
   create_table "participants", force: true do |t|
     t.string   "name"
@@ -27,6 +27,18 @@ ActiveRecord::Schema.define(version: 20140120091155) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "extra_brand"
+  end
+
+  create_table "xp_users", force: true do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
+    t.text     "address"
+    t.string   "fb_user_id"
+    t.string   "fb_share_id"
+    t.string   "access_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
