@@ -1,7 +1,7 @@
 # encoding: utf-8
 class XpUsersController < ApplicationController
   before_action :set_xp_user, only: [:show, :edit, :update, :destroy]
-  #before_filter :allow_iframe_requests
+  before_filter :allow_iframe_requests
 
   layout false
 
@@ -29,7 +29,7 @@ class XpUsersController < ApplicationController
 
 
   def allow_iframe_requests
-	response.headers.delete('X-Frame-Options')
+	response.headers['X-Frame-Options'] = "ALLOW"
   end
 
 
