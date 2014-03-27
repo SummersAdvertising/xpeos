@@ -209,31 +209,31 @@ $(function(){
 	});
 
 	$('.api-share-link').click(function() {
-		var id = $(this).data('id');
+		var id = $(this).data('id');		
 		
-		$.colorbox({ href: "#progress", inline: true, closeButton: false, overlayClose: false});
+		var is_get_user = false;
+		var is_get_post = false;
 		
-		FB.login(function() {
+		var is_get_user_finished = false;
+		var is_get_post_finished = false;
+		
+		$.colorbox({ href: "#progress", inline: true, closeButton: false, overlayClose: false, onClosed: function() {
 			
-			var is_get_user = false;
-			var is_get_post = false;
-			
-			var is_get_user_finished = false;
-			var is_get_post_finished = false;
-			
-			function check_open_form() {
-				console.log('is_get_user_finished: ' + is_get_user_finished);
-				console.log('is_get_post_finished: ' + is_get_post_finished);
-			
-				if ( is_get_user_finished && is_get_post_finished ) {
-					$.colorbox.close();
-				}
-				
 				if ( is_get_post && is_get_user ) {
 					  
 					hold = true;
 					$.colorbox({ href: "#form", inline: true, width: "579px"});
 				}
+		}});
+		
+		FB.login(function() {			
+			
+			function check_open_form() {
+			
+				if ( is_get_user_finished && is_get_post_finished ) {
+					$.colorbox.close();
+				}
+				
 			}
 			
 			// upload photo into facebook			
