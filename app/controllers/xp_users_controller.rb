@@ -2,6 +2,8 @@
 class XpUsersController < ApplicationController
   before_action :set_xp_user, only: [:show, :edit, :update, :destroy]
   before_filter :allow_iframe_requests
+  before_filter  :set_p3p
+
 
   layout false
 
@@ -32,6 +34,9 @@ class XpUsersController < ApplicationController
 	response.headers['X-Frame-Options'] = "ALLOW"
   end
 
+	def set_p3p
+	  response.headers["P3P"]='CP="CAO PSA OUR"'
+	end
 
   private
     # Use callbacks to share common setup or constraints between actions.
