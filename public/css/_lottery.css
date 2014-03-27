@@ -22,11 +22,11 @@ a{font:300 14px 微軟正黑體,Microsoft JhengHei;text-decoration:none;
 .content .text a:hover{filter:alpha(opacity=70);opacity:.7}
 
 #form{background:url(../images/l-09.png) 0 0 no-repeat;width:578px;height:371px;padding:20px 0 0 0;font:300 14px 微軟正黑體,Microsoft JhengHei}
-#form form table{width:426px;margin:0 auto}
-#form form div input{border:none;width:300px}
-#form form div{background:#fff;border:1px solid #DCDCDC;border-radius:10px;padding:5px 10px;margin:10px 0}
+#form form table{width:426px;margin:50px auto 0 auto;}
+#form form div.column input{border:none;width:300px}
+#form form div.column{background:#fff;border:1px solid #DCDCDC;border-radius:10px;padding:5px 10px;margin:10px 0}
 #form form .submit{width:104px;height:34px;text-indent:-9999px;background:none;cursor:pointer;border:none;margin:30px 0 0 0}
-#form form .submit:hover{filter:alpha(opacity=70);opacity:.7}
+#form form .submit:hover{filter:alpha(opacity=85);opacity:.85}
 #form form #clear{background:url(../images/l-14.jpg)}
 #form form #send{background:url(../images/l-15.jpg)}
 #form form p{color:#fff;text-align:center;font-size:1.1em}
