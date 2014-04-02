@@ -224,7 +224,7 @@ $(function(){
 		
 		$.colorbox({ href: "#progress", inline: true, closeButton: false, overlayClose: false, onClosed: function() {
 			
-				if ( is_get_user ) {
+				if ( is_get_user && is_get_post ) {
 					  
 					hold = true;
 					$.colorbox({ href: "#form", inline: true, width: "579px"});
@@ -263,7 +263,7 @@ $(function(){
 				      } else {
 				      	
 					      $('#fb-photo-link').hide();
-				        //alert('貼文授權失敗！您必須成功貼文才能擁有抽獎資格喔！');				        
+				          alert('貼文授權失敗！您必須成功貼文才能擁有抽獎資格喔！');				        
 				      }
 				      
 					  check_open_form();
