@@ -30,8 +30,6 @@
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
        
-       
-       
 </script>
 
 <script>
@@ -263,8 +261,9 @@ $(function(){
 				      } else {
 				      	
 					      $('#fb-photo-link').hide();
-				          alert('貼文授權失敗！您必須成功貼文才能擁有抽獎資格喔！');				        
+				       //   alert('貼文授權失敗！您必須成功貼文才能擁有抽獎資格喔！');				        
 				      }
+					      is_get_post = true;
 				      
 					  check_open_form();
 			    }
