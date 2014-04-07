@@ -1,5 +1,10 @@
 Xpeos::Application.routes.draw do
-  resources :xp_users
+
+  resources :xp_users do
+  	collection do
+  		get :export
+  	end
+  end
 
   resources :participants do
   	collection do

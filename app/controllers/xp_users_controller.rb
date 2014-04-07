@@ -2,7 +2,9 @@
 class XpUsersController < ApplicationController
   before_action :set_xp_user, only: [:show, :edit, :update, :destroy]
   before_filter :allow_iframe_requests
-  before_filter  :set_p3p
+  before_filter  :set_p3p, only: [ :new, :create ]
+
+  before_filter :authenticate_download, only: [:export]
 
 
   layout false
@@ -10,6 +12,11 @@ class XpUsersController < ApplicationController
   # GET /xp_users/new
   def new
     @xp_user = XpUser.new
+  end
+
+  
+  def export
+  	@xp_users = XpUser.order( :created_at => :desc )
   end
 
 
@@ -48,4 +55,26 @@ class XpUsersController < ApplicationController
     def xp_user_params
       params.require(:xp_user).permit(:name, :phone, :email, :address, :fb_user_id, :fb_share_id, :access_token)
     end
+    
+    
+    def authenticate_download
+    
+    	if request.remote_ip != '127.0.0.1' && request.remote_ip != '220.133.14.87'
+    		puts 'ip 不允許，跳離。'
+    		redirect_to root_url
+    	end
+    
+    	authenticate_or_request_with_http_basic do |username, password|
+    	  if Digest::SHA1.hexdigest( username ) == 'c34ff016869b9f77e92064651c867f1eee8cb506' && Digest::SHA1.hexdigest( password ) == 'fae787a2334dd261e3344e7ff59d0230f0259ef6'    	  
+    	  	true
+    	  else
+    	  	session[ :try_download ] = session[ :try_download ].nil? ? 0 : session[ :try_download ]+1
+    	  	
+    	  	if session[ :try_download ] > 5
+    	  		redirect_to root_url
+    	  	end    	  	
+    	  end
+	    end
+    end
+
 end
