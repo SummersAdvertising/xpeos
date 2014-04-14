@@ -15,7 +15,7 @@
 <script>
 	window.fbAsyncInit = function() {
         FB.init({
-          appId      : '678638088844362',
+          appId      : '267446313433381',
           //appId     : '1436443593263059',
           status     : true,
           xfbml      : true
@@ -226,6 +226,7 @@ $(function(){
 					  
 					hold = true;
 					$.colorbox({ href: "#form", inline: true, width: "579px"});
+					//alert("已完成分享，感謝你的參與。");
 				}
 		}});
 		
@@ -240,34 +241,60 @@ $(function(){
 			}
 			
 			// upload photo into facebook			
-			FB.api(
-				'me/photos',
-				"post",
-				{
-				url: '<%= root_url %>/images/share_' + id + '.jpg',
-				message: $('#share-' + id + '-message').html()
-				},
-			    function (response) {
-				       is_get_post_finished = true;
+			// FB.api('me/photos',"post",
+			// 	{
+			// 	url: '<%= root_url %>/images/share_' + id + '.jpg',
+			// 	message: $('#share-' + id + '-message').html()
+			// 	},
+			//     function (response) {
+			// 	       is_get_post_finished = true;
 				    
-				      if (response && !response.error && response.post_id) {
+			// 	      if (response && !response.error && response.post_id) {
 				      
-					      is_get_post = true;
-					      $('#xp_user_fb_share_id').val( response.id );
-					      $('#fb-photo-link').attr( 'href', 'https://www.facebook.com/photo.php?fbid=' + response.id );
+			// 		      is_get_post = true;
+			// 		      $('#xp_user_fb_share_id').val( response.id );
+			// 		      $('#fb-photo-link').attr( 'href', 'https://www.facebook.com/photo.php?fbid=' + response.id );
 					      
 					      
 				      	
-				      } else {
+			// 	      } else {
 				      	
-					      $('#fb-photo-link').hide();
-				       //   alert('貼文授權失敗！您必須成功貼文才能擁有抽獎資格喔！');				        
-				      }
-					      is_get_post = true;
+			// 		      $('#fb-photo-link').hide();
+			// 	       //   alert('貼文授權失敗！您必須成功貼文才能擁有抽獎資格喔！');				        
+			// 	      }
+			// 		      is_get_post = true;
 				      
-					  check_open_form();
-			    }
-			);
+			// 		 check_open_form();
+			//     }
+			// );
+			
+			var share_meta = $('#share-' + id + '-message').html().split("\n\n");
+			//share to facebook timeline
+			FB.api('/me/feed', 'post', 
+			{
+				message: $('#share-' + id + '-message').html(), 
+				description: share_meta[1], 
+				picture: '<%= root_url %>/images/share_' + id + '.jpg', 
+				link: "http://www.microsoft.com/taiwan/promo/windows/xpto8/lottery.htm", 
+				name: share_meta[0], 
+				//caption: share_meta[0]
+			},
+			function (response) {
+				is_get_post_finished = true;
+
+				if (response && !response.error && response.post_id) {
+					is_get_post = true;
+					$('#xp_user_fb_share_id').val( response.id );
+					$('#fb-photo-link').attr( 'href', 'https://www.facebook.com/photo.php?fbid=' + response.id );
+				} 
+				else {
+					$('#fb-photo-link').hide();
+					//   alert('貼文授權失敗！您必須成功貼文才能擁有抽獎資格喔！');
+				}
+				is_get_post = true;
+
+				check_open_form();
+			});
 			
 			FB.api('me', function( response ) {
 				is_get_user_finished = true;
