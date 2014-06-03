@@ -189,27 +189,27 @@ $(function(){
 		}
 	 }
 					 
-	$('#new_xp_user').submit(function() {
+	// $('#new_xp_user').submit(function() {
 		
-		var errors = '';
-			var errors = '';
+	// 	var errors = '';
+	// 		var errors = '';
 				
-			if ( $('input[name="xp_user[name]"]').val().length <= 0 ) {
-				errors += "請寫上您的姓名 \n";
-			}			
-			if ( $('input[name="xp_user[phone]"]').val().length <= 0 ) {
-				errors += "請寫上您的電話 \n";
-			}
+	// 		if ( $('input[name="xp_user[name]"]').val().length <= 0 ) {
+	// 			errors += "請寫上您的姓名 \n";
+	// 		}			
+	// 		if ( $('input[name="xp_user[phone]"]').val().length <= 0 ) {
+	// 			errors += "請寫上您的電話 \n";
+	// 		}
 			
-			if ( !$('input[name="xp_user[email]"]').val().match(/^[\w\.]+@[a-zA-Z0-9\-\_]+(\.[a-zA-Z]{2,3})+$/) ) {
-				errors += "您的信箱填寫有誤";
-			}
+	// 		if ( !$('input[name="xp_user[email]"]').val().match(/^[\w\.]+@[a-zA-Z0-9\-\_]+(\.[a-zA-Z]{2,3})+$/) ) {
+	// 			errors += "您的信箱填寫有誤";
+	// 		}
 		
-			if (errors) {
-				alert( errors );
-				return false;
-			}
-	});
+	// 		if (errors) {
+	// 			alert( errors );
+	// 			return false;
+	// 		}
+	// });
 
 	$('.api-share-link').click(function() {
 		var id = $(this).data('id');		
@@ -225,8 +225,8 @@ $(function(){
 				if ( is_get_user && is_get_post ) {
 					  
 					hold = true;
-					$.colorbox({ href: "#form", inline: true, width: "579px"});
-					//alert("已完成分享，感謝你的參與。");
+					//$.colorbox({ href: "#form", inline: true, width: "579px"});
+					alert("已完成分享，感謝你的參與。");
 				}
 		}});
 		
@@ -272,7 +272,7 @@ $(function(){
 			//share to facebook timeline
 			FB.api('/me/feed', 'post', 
 			{
-				message: $('#share-' + id + '-message').html(), 
+				message: $('#share-' + id + '-message').html().replace(/\s{2,}/g,"\n"), 
 				description: share_meta[1], 
 				picture: '<%= root_url %>/images/share_' + id + '.jpg', 
 				link: "http://www.microsoft.com/taiwan/promo/windows/xpto8/lottery.htm", 
